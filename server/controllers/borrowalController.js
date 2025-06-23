@@ -62,7 +62,7 @@ const addBorrowal = async (req, res) => {
         if (err) {
             return res.status(400).json({success: false, err});
         }
-
+        
         Book.findByIdAndUpdate(newBorrowal.bookId, {isAvailable: false}, (err, book) => {
             if (err) {
                 return res.status(400).json({success: false, err});
